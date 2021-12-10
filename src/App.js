@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import Lista from './Components/Lista/Lista'
+import ItemListContainer from './Components/Lista/ItemListContainer/ItemListContainer';
 import Navbar from "./Components/Navbar/NavBar.js"
+
 
 function App() {
   return (
     <div className="App">
      <Navbar />
-     <Lista />
+     <ItemListContainer />
+     
     </div>
   );
 }

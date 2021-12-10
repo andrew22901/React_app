@@ -1,15 +1,12 @@
 import React from "react";
-
 import './CartWitget.css';
-import { BsCart2 } from 'react-icons/bs';
-class CartWidget extends React.Component {
-    render() {
+import cart from './carrito-de-compras.png';
+
+
+export default function CartWidget () {
+    
         return(
-           <a href="#" className="Carrito"><BsCart2/></a> 
+           <a href="#" > <img className="Carrito" src={cart} alt="carrito"></img></a> 
         )
-    }
+    
 }
-
-export default CartWidget
-
-

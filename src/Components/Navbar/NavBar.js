@@ -2,8 +2,8 @@ import React from "react";
 import CartWidget from "./CartWidget/CartWitget";
 import './Navbar.css';
 
-class Navbar extends React.Component {
-    render() {
+export default function Navbar() {
+    
         return(
             <nav className="menu">
             <label className="logo">StreetWear</label>
@@ -16,11 +16,11 @@ class Navbar extends React.Component {
                 <li><CartWidget/></li>
             </ul>
         </nav>
-        )
-    }
+        );
+    
 }
 
-export default Navbar
+
 
 
 

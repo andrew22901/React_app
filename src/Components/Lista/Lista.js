@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Lista.css'
-import ItemListContainer from './ItemListContainer/ItemListContainer';
+import Item from './Item/Item';
 import Cargo from '../multimedia/Cargo-pants.jpg';
 import Camiseta from '../multimedia/Camiseta.jpg';
 import Jogger from '../multimedia/Sudadera.jpg'
+import ItemCounter from '../ItemCounter/ItemCounter';
+import Loader from '../Loader/Loader';
 
 
 const Lista = () => {
-    
-    const [products, setProducts] = useState([
+    //
+    const [loader, setLoader] = useState(true)
+    //
+    const [products, setProducts ] = useState([
     
 
         {   
@@ -35,17 +39,43 @@ const Lista = () => {
         
         
     ]);
+//
+    const getProducts = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products)
+        }, 2000)
+    })
 
-
-
+    useEffect(() => {
+        getProducts.then((data) => {
+            console.log("respuesta de promesa:", data)
+            setProducts(data)
+            //Ocultar loader
+            setLoader(false)
+        })
+    }, [])
+//
     return(
-        <div className="Grid">
-            {products.map((itemListContainer) => {
-                return(
-                    <ItemListContainer data={itemListContainer}/>
-                );
-                
-            })}
+        <div>
+            {
+            loader
+            ?
+            <Loader />
+            :
+            <div className="Grid">
+                {products.map((item) => {
+                        
+                    return(
+                        <div className='Cards'>
+                        <Item data={item}/>
+                        <ItemCounter data={item}/>
+                        </div>
+                        
+                    );
+                    
+                })}
+            </div>
+            }
         </div>
     )
     
