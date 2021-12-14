@@ -1,0 +1,12 @@
+.GridDetail{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.CardsDetail{
+    width: 100%;
+   border: solid  2px rgb(66, 66, 66);
+   margin: 50px;
+   border-radius: 10px;
+   padding: 10px; 
+}

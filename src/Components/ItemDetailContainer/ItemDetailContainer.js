@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import './Lista.css'
-import Item from './Item/Item';
-import Cargo from '../multimedia/Cargo-pants.jpg';
-import Camiseta from '../multimedia/Camiseta.jpg';
+import './ItemDetailContainer.css'
+
 import Jogger from '../multimedia/Sudadera.jpg';
-import ItemCounter from '../ItemCounter/ItemCounter';
+
 import Loader from '../Loader/Loader';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 
 const Lista = () => {
@@ -21,22 +20,7 @@ const Lista = () => {
             precio: 100,
             stock: 10,
             id: 1
-        },
-        {   
-            img: Camiseta,
-            nombre: 'Camiseta',
-            precio: 30,
-            stock: 5,
-            id: 1
-        },
-        {   
-            img: Cargo,
-            nombre: 'Pantalones Cargo',
-            precio: 120,
-            stock: 15,
-            id: 1
         }
-        
         
     ]);
 //
@@ -63,13 +47,13 @@ const Lista = () => {
             ?
             <Loader />
             :
-            <div className="Grid">
+            <div className="GridDetail">
                 {products.map((item) => {
                         
                     return(
-                        <div className='Cards'>
-                        <Item data={item}/>
-                        <ItemCounter data={item}/>
+                        <div className='CardsDetail'>
+                        <ItemDetail data={item}/>
+                        
                         
                         </div>
                         

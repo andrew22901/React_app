@@ -1,0 +1,36 @@
+.box{
+   display: flex;
+
+}
+.detailimg {
+    width: 700px;
+    margin: 25px;
+    margin-right: 50px;
+    border-radius: 10px;
+}
+
+.info{
+    padding-top: 50px;
+    
+}
+
+.precio{
+    margin: 25px;
+}
+
+.agregarDetail{
+    transition: all 0.3s ease 0s;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    border: solid 2px rgb(32, 32, 32);
+    cursor: pointer;
+    font-size: 25px
+    ;
+}
+
+.agregarDetail:hover{
+    background-color:rgb(49, 49, 49);
+    color: white;
+}
