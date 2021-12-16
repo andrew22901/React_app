@@ -8,7 +8,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 
 
-const ItemDetailContainer = () => {
+export default function ItemDetailContainer() {
     //
     const [loader, setLoader] = useState(true)
     //
@@ -30,14 +30,14 @@ const ItemDetailContainer = () => {
             nombre: 'Camiseta',
             precio: 30,
             stock: 5,
-            id: 1
+            id: 2
         },
         {   
             img: Cargo,
             nombre: 'Pantalones Cargo',
             precio: 120,
             stock: 15,
-            id: 1
+            id: 3
         }
         
     ]
@@ -45,17 +45,10 @@ const ItemDetailContainer = () => {
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(dataproducts)
-        }, 2000)
+        }, 1000)
     })
 
-    useEffect(() => {
-        getProducts.then((data) => {
-            console.log("respuesta de promesa:", data)
-            setProducts(data)
-            //Ocultar loader
-            setLoader(false)
-        })
-    }, [])
+   
 
     useEffect(() => {
         getProducts.then(resultsProducts => {
@@ -76,24 +69,11 @@ const ItemDetailContainer = () => {
             ?
             <Loader />
             :
-            <div className="GridDetail">
-                {products.map((item) => {
+            <ItemDetail data={products}/>
                         
-                    return(
-                        <div className='CardsDetail'>
-                        <ItemDetail data={products}/>
-                        
-                        
-                        </div>
-                        
-                    );
-                    
-                })}
-            </div>
             }
         </div>
-    )
+            
     
-}
-
-export default ItemDetailContainer
+    );
+        }
