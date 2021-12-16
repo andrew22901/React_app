@@ -10,7 +10,6 @@ export default function Navbar() {
             <ul className="menu_items">
                 <li className="active"><a href="#">Inicio</a></li>
                 <li><a href="#">Productos</a></li>
-                <li><a href="#">Desarrollos</a></li>
                 <li><a href="#">Nosotros</a></li>
                 <li><a href="#">Contacto</a></li>
                 <li><CartWidget/></li>
