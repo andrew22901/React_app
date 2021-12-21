@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import './Lista.css'
-import Item from './Item/Item';
-import Cargo from '../multimedia/Cargo-pants.jpg';
-import Camiseta from '../multimedia/Camiseta.jpg';
-import Jogger from '../multimedia/Sudadera.jpg';
-import ItemCounter from '../ItemCounter/ItemCounter';
-import Loader from '../Loader/Loader';
+import '../../Lista/Lista.css'
+import Item from '../../Lista/Item/Item';
+import Cargo from '../../multimedia/Cargo-pants.jpg';
+import Loader from '../../Loader/Loader';
+import Jogger from '../../multimedia/Sudadera.jpg';
+import ItemCounter from '../../ItemCounter/ItemCounter';
 
 
-const Lista = () => {
+
+const DataFiltrosPantalones= () => {
     //
     const [loader, setLoader] = useState(true)
-   
     //
     const [products, setProducts ] = useState([
     
@@ -23,13 +22,7 @@ const Lista = () => {
             stock: 10,
             id: 1
         },
-        {   
-            img: Camiseta,
-            nombre: 'Camiseta',
-            precio: 30,
-            stock: 5,
-            id: 2
-        },
+        
         {   
             img: Cargo,
             nombre: 'Pantalones Cargo',
@@ -70,7 +63,7 @@ const Lista = () => {
                     return(
                         <div className='Cards'>
                         <Item data={item}/>
-                        
+                        <ItemCounter data={item}/>
                         
                         </div>
                         
@@ -84,4 +77,4 @@ const Lista = () => {
     
 }
 
-export default Lista
+export default DataFiltrosPantalones
