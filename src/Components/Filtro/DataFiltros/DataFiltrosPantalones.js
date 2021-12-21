@@ -63,7 +63,7 @@ const DataFiltrosPantalones= () => {
                     return(
                         <div className='Cards'>
                         <Item data={item}/>
-                        <ItemCounter data={item}/>
+                        
                         
                         </div>
                         
