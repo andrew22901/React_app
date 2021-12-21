@@ -1,8 +1,29 @@
 import React from "react";
-
+import ItemCounter from "../ItemCounter/ItemCounter";
 import './ItemDetail.css'
+import { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export default function ItemDetail( {data} ) {
+    const [quantityItem, setQuantityItem] = useState(0)
+    const [itemCart, setItemCart] = useState(
+        {
+            name: data.name,
+            id: data.id,
+            quantity: 0
+        }
+    )
+
+    const onAdd = (value, name) => {
+        console.log("items agregados: ", value)
+        itemCart.quantity = value
+        console.log(name)
+    }
+
+    const sendItem = () => {
+        console.log("itemCart: ", itemCart)
+    }
+
     return(
         <div >
             
@@ -13,7 +34,12 @@ export default function ItemDetail( {data} ) {
                     <h1>{data.nombre} StreetWear Classic</h1>
                     <h2 className="precio">precio: {data.precio} USD </h2>
                     <h2>Stock: {data.stock}  </h2>
-                    <button className="agregarDetail" id="">Comprar</button> 
+                    <ItemCounter stock={data.stock} onAdd={onAdd}/>
+
+                    <Link to='/cart'>
+                        <button onClick={sendItem} className="agregarDetail" id="">Comprar</button> 
+                    </Link>
+
                 </div>
             </div>
         </div>
