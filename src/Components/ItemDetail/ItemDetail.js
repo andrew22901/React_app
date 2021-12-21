@@ -8,7 +8,7 @@ export default function ItemDetail( {data} ) {
     const [quantityItem, setQuantityItem] = useState(0)
     const [itemCart, setItemCart] = useState(
         {
-            name: data.name,
+            name: data.nombre,
             id: data.id,
             quantity: 0
         }
@@ -34,7 +34,7 @@ export default function ItemDetail( {data} ) {
                     <h1>{data.nombre} StreetWear Classic</h1>
                     <h2 className="precio">precio: {data.precio} USD </h2>
                     <h2>Stock: {data.stock}  </h2>
-                    <ItemCounter stock={data.stock} onAdd={onAdd}/>
+                    <ItemCounter stock={data.stock}  onAdd={onAdd}/>
 
                     <Link to='/cart'>
                         <button onClick={sendItem} className="agregarDetail" id="">Comprar</button> 

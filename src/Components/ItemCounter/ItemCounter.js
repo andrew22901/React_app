@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './ItemCounter.css';
 
-export default function ItemCounter({stock, onAdd}){
+export default function ItemCounter({stock, onAdd, }){
     const[contador, setContador] = useState(0);
     
     const sumar = () => {
