@@ -8,7 +8,7 @@ export default function Navbar() {
         return(
             <nav className="menu">
             <label className="logo">StreetWear</label>
-            <ul className="menu_items">
+            <ul className="menu_items" >
                 <li>
                     <Link to='/'>
                         <a>Inicio</a>
@@ -29,11 +29,15 @@ export default function Navbar() {
                         <a>Contacto</a>
                     </Link>
                 </li>
+               
                 <li>
                     <Link to='/cart'>
                         <CartWidget/>
                     </Link>
                 </li>
+                
+                
+                
             </ul>
         </nav>
         );

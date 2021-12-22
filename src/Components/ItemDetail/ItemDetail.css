@@ -26,8 +26,8 @@
     margin-top: 20px;
     border: solid 2px rgb(32, 32, 32);
     cursor: pointer;
-    font-size: 25px
-    ;
+    font-size: 25px;
+    margin: 10px;
 }
 
 .agregarDetail:hover{

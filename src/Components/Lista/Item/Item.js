@@ -8,7 +8,7 @@ import './Item.css';
 
 export default function Item({ data }) {
     
-    console.log(data.stock)
+    
     
     const onAdd = (value, name) => {
         console.log("items agregados: ", value)

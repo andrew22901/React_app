@@ -20,6 +20,7 @@ export default function AppRouter() {
                 <Route path='/Categoey/Camisetas' element={<DataFiltrosCamisetas/>} />
                 <Route path='/Categoey/Pantalones' element={<DataFiltrosPantalones/>} />
                 <Route path='/products/:id' element={<ItemDetailPage />} />
+                            <Route path='/category/:categoria' element={<DataFiltrosCamisetas />} />
                 <Route path='/about' element={<AboutUsPage />} />
                 <Route path='/cart' element={<CartPage />} />
                 <Route path='/contact' element={<ContactPage />} />

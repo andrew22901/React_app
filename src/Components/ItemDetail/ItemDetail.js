@@ -20,10 +20,15 @@ export default function ItemDetail( {data} ) {
         console.log(name)
     }
 
-    const sendItem = () => {
+    
+    const button = () => {
+        
         console.log("itemCart: ", itemCart)
+        
+        var prueba = document.getElementById("boton")
+        var disable = function() { this.disabled = true; };
+        prueba.addEventListener('click', disable , false);
     }
-
     return(
         <div >
             
@@ -36,9 +41,13 @@ export default function ItemDetail( {data} ) {
                     <h2>Stock: {data.stock}  </h2>
                     <ItemCounter stock={data.stock}  onAdd={onAdd}/>
 
+                    
+                    <button  onClick={button} className="agregarDetail" id="boton">Agregar al carrito</button> 
+
                     <Link to='/cart'>
-                        <button onClick={sendItem} className="agregarDetail" id="">Comprar</button> 
+                        <button  className="agregarDetail">Ver carrito</button>
                     </Link>
+                    
 
                 </div>
             </div>
