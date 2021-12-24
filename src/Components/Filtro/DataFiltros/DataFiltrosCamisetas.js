@@ -19,30 +19,7 @@ export default function ItemDetailContainer() {
 
     const dataproducts = [
 
-        {   
-            img: Jogger,
-            nombre: 'Jogger',
-            precio: 100,
-            stock: 10,
-            id: 1,
-            categoria: 1
-        },
-        {   
-            img: Camiseta,
-            nombre: 'Camiseta',
-            precio: 30,
-            stock: 5,
-            id: 2,
-            categoria: 2
-        },
-        {   
-            img: Cargo,
-            nombre: 'Pantalones Cargo',
-            precio: 120,
-            stock: 15,
-            id: 3,
-            categoria: 1
-        }
+       
         
     ]
 //

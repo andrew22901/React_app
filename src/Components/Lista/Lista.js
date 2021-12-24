@@ -5,7 +5,7 @@ import Cargo from '../multimedia/Cargo-pants.jpg';
 import Camiseta from '../multimedia/Camiseta.jpg';
 import Jogger from '../multimedia/Sudadera.jpg';
 import Loader from '../Loader/Loader';
-import Filtro from '../Filtro/Filtro';
+
 
 
 const Lista = () => {
@@ -47,7 +47,7 @@ const Lista = () => {
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
-        }, 2000)
+        }, 1000)
     })
 
     useEffect(() => {
