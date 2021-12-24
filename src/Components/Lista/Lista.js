@@ -4,8 +4,8 @@ import Item from './Item/Item';
 import Cargo from '../multimedia/Cargo-pants.jpg';
 import Camiseta from '../multimedia/Camiseta.jpg';
 import Jogger from '../multimedia/Sudadera.jpg';
-import ItemCounter from '../ItemCounter/ItemCounter';
 import Loader from '../Loader/Loader';
+
 
 
 const Lista = () => {
@@ -21,21 +21,24 @@ const Lista = () => {
             nombre: 'Jogger',
             precio: 100,
             stock: 10,
-            id: 1
+            id: 1,
+            categoria: '1'
         },
         {   
             img: Camiseta,
             nombre: 'Camiseta',
             precio: 30,
             stock: 5,
-            id: 2
+            id: 2,
+            categoria: '2'
         },
         {   
             img: Cargo,
             nombre: 'Pantalones Cargo',
             precio: 120,
             stock: 15,
-            id: 3
+            id: 3,
+            categoria: '1'
         }
         
         
@@ -44,7 +47,7 @@ const Lista = () => {
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(products)
-        }, 2000)
+        }, 1000)
     })
 
     useEffect(() => {
@@ -69,7 +72,9 @@ const Lista = () => {
                         
                     return(
                         <div className='Cards'>
+                        
                         <Item data={item}/>
+                        
                         
                         
                         </div>

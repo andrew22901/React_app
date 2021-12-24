@@ -8,6 +8,7 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 
 
+
 export default function ItemDetailContainer() {
     //
     const [loader, setLoader] = useState(true)
