@@ -9,7 +9,7 @@ export default function Filtrobtn({category}) {
     return(
         <div>
         <h2>Filtrar por</h2>
-        <Link to={`/category/1`}>
+        <Link to='/category/1'>
         <button className="agregar filtro">Pantalones</button>
         </Link>
         <Link to='/category/2'>
