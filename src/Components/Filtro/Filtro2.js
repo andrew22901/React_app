@@ -45,7 +45,7 @@ const Lista = () => {
     ]);
 
     const filtered = products.filter(function(element){
-        return element.categoria === '1'
+        return element.categoria === '2'
       });
 
       
