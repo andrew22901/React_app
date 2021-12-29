@@ -7,8 +7,8 @@ import './Item.css';
 
 
 export default function Item( {data} ) {
-
     
+    console.log("hola2",data.nombre)
     
     const onAdd = (value, name) => {
         console.log("items agregados: ", value)

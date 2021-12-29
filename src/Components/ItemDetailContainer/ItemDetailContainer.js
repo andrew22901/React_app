@@ -15,7 +15,7 @@ export default function ItemDetailContainer() {
     //
     const [products, setProducts ] = useState([]);
     //
-    const { id } = useParams()
+            const { id } = useParams()
 
     const dataproducts = [
 
@@ -24,21 +24,24 @@ export default function ItemDetailContainer() {
             nombre: 'Jogger',
             precio: 100,
             stock: 10,
-            id: 1
+            id: 1,
+            categoria: 1
         },
         {   
             img: Camiseta,
             nombre: 'Camiseta',
             precio: 30,
             stock: 5,
-            id: 2
+            id: 2,
+            categoria: 2
         },
         {   
             img: Cargo,
             nombre: 'Pantalones Cargo',
             precio: 120,
             stock: 15,
-            id: 3
+            id: 3,
+            categoria: 1
         }
         
     ]
@@ -55,14 +58,15 @@ export default function ItemDetailContainer() {
         getProducts.then(resultsProducts => {
             resultsProducts.filter(resultProduct => {
                 if (resultProduct.id === parseInt(id)) {
+                    console.log("proof", resultsProducts)
                     setProducts(resultProduct)
                     setLoader(false)
-                }
+                }else(console.log("no concuerda", resultProduct))
             })
         })
     }, [id])
 //
-
+        console.log("pro",products)
     return(
         <div>
             {

@@ -6,6 +6,8 @@ import Camiseta from '../multimedia/Camiseta.jpg';
 import Jogger from '../multimedia/Sudadera.jpg';
 import Loader from '../Loader/Loader';
 
+import Filtrobtn from '../Filtro/Filtrobtn';
+
 
 
 const Lista = () => {
@@ -13,16 +15,16 @@ const Lista = () => {
     const [loader, setLoader] = useState(true)
    
     //
-    const [products, setProducts ] = useState([
+    const [products, setProducts ] = useState([]);
     
-
+    const inventory = [
         {   
             img: Jogger,
             nombre: 'Jogger',
             precio: 100,
             stock: 10,
             id: 1,
-            categoria: '1'
+            categoria: 1
         },
         {   
             img: Camiseta,
@@ -30,7 +32,7 @@ const Lista = () => {
             precio: 30,
             stock: 5,
             id: 2,
-            categoria: '2'
+            categoria: 2
         },
         {   
             img: Cargo,
@@ -38,15 +40,16 @@ const Lista = () => {
             precio: 120,
             stock: 15,
             id: 3,
-            categoria: '1'
+            categoria: 1
         }
+    ]
+
         
-        
-    ]);
+    
 //
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products)
+            resolve(inventory)
         }, 1000)
     })
 
@@ -67,13 +70,15 @@ const Lista = () => {
             ?
             <Loader />
             :
+            <div>
+            <Filtrobtn data={products}/>
             <div className="Grid">
                 {products.map((item) => {
                         
                     return(
-                        <div className='Cards'>
+                        <div className='Cards' key={item.id}>
                         
-                        <Item data={item}/>
+                        <Item data={item} />
                         
                         
                         
@@ -82,6 +87,7 @@ const Lista = () => {
                     );
                     
                 })}
+            </div>
             </div>
             }
         </div>

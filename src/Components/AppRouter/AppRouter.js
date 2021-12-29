@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar/NavBar'
-import Filtro2 from '../Filtro/Filtro2';
+
 import ContactPage from '../../pages/ContactPage/ContactPage';
 import HomePage from '../../pages/HomePage/HomePage.js';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage'
@@ -16,12 +16,13 @@ import Filtrobtn from '../Filtro/Filtrobtn';
 export default function AppRouter() {
     return (
         <BrowserRouter>
+        
             <Navbar />
-            <Filtrobtn />
+            
             
             <Routes>
-                <Route path='/Category/2' element={<Filtro2 />} />
-                <Route path='/Category/1' element={<Filtro />} />
+                
+                <Route path='/category/:categoria' element={<Filtro />} />
                
                 <Route path='/products/:id' element={<ItemDetailPage />} />
                             

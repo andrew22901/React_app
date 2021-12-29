@@ -31,9 +31,9 @@ export default function Navbar() {
                 </li>
                
                 <li>
-                    <Link to='/cart'>
+                   
                         <CartWidget/>
-                    </Link>
+                   
                 </li>
                 
                 

@@ -1,20 +1,35 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import '../Lista/Lista.css'
-import Item from '../Lista/Item/Item';
+
 import Cargo from '../multimedia/Cargo-pants.jpg';
 import Camiseta from '../multimedia/Camiseta.jpg';
 import Jogger from '../multimedia/Sudadera.jpg';
-import Loader from '../Loader/Loader';
+
+import { useParams } from 'react-router-dom';
+import Item from '../Lista/Item/Item';
 
 
-const Lista = () => {
+
+const Filtro = () => {
     //
     const [loader, setLoader] = useState(true)
-                                           
+   
     //
-    const [products, setProducts ] = useState([
+    const [productoF, setproductoF ] = useState([
+       
+    ])
+       
+    const lista = []
+       
     
+    const { categoria } = useParams()
     
+const dataProductos =[
+
+        //nota: id de categoria
+        // camiseta = 2
+        // Pantalones = 1
+        
 
         {   
             img: Jogger,
@@ -22,7 +37,7 @@ const Lista = () => {
             precio: 100,
             stock: 10,
             id: 1,
-            categoria: '1'
+            categoria: 1
         },
         {   
             img: Camiseta,
@@ -30,7 +45,7 @@ const Lista = () => {
             precio: 30,
             stock: 5,
             id: 2,
-            categoria: '2'
+            categoria: 2
         },
         {   
             img: Cargo,
@@ -38,68 +53,50 @@ const Lista = () => {
             precio: 120,
             stock: 15,
             id: 3,
-            categoria: '1'
+            categoria: 1
         }
+    ]
         
-        
-    ]);
-
-    const filtered = products.filter(function(element){
-        return element.categoria === '1'
-      });
-
-      
-//      
-
-
-useEffect(() => {
-    getProducts.then((data) => {
-        console.log("respuesta de promesa:", data)
-        setProducts(data)
-        //Ocultar loader
-        setLoader(false)
-    })
-}, [])
-
-
+    
+//
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(filtered)
+            resolve(dataProductos)
         }, 1000)
     })
 
-   
-//
+    useEffect(() => {
+        getProducts.then(data => {
+            data.filter(data => {
+                if (data.categoria === parseInt(categoria)) {
+                    console.log("holaa", data)
+                    lista.push(data)
+                    
+                }else(console.log("no concuerda", data))
+            })
+            
+        })
+        
+    }, [categoria])
+//  
 
-
+console.log("pro",productoF)
+console.log("lista",lista)
 
     return(
-        <div>
-            {
-            loader
-            ?
-            <Loader />
-            :
-            <div className="Grid">
-                {filtered.map((element) => {
-                        
-                    return(
-                        <div className='Cards'>
-                        
-                        <Item data={element}/>
-                        
-                        
-                        
-                        </div>
-                        
-                    );
-                    
-                })}
-            </div>
-            }
+        <div className="Grid">
+            {lista.map((item) => {
+                return(
+                    <div className='Cards'>
+                        <Item data={lista} />
+                    </div>
+                )
+            })}
+            <Item data={productoF}/>
         </div>
+           
     )
     
 }
 
-export default Lista
+export default Filtro
